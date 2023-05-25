@@ -6,7 +6,7 @@ const {User} = require("../../models")
 router.get("/all", (req, res) => {
     User.findAll()
     .then(results => {
-        res.json(results)
+        res.json(results)       
     })
 })
 
