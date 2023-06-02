@@ -1,20 +1,24 @@
 const router = require('express').Router();
-const {Post} = require("../../models")
+const {Comment} = require("../../models")
 
 
-//gets all posts
-router.get("/all", (req, res) => {
-    Post.findAll()
+//gets all comments for a given post
+router.get("/:id", (req, res) => {
+    Comment.findAll({
+        where: {
+            post_id: req.params.id
+        }
+    })
     .then(results => {
         res.json(results)
     })
 })
 
-    //creates a new post
+    //creates a new comment
     router.post('/', async (req, res) => {
         try {
-         const post = await Post.create(req.body);
-         res.status(200).json(post);
+         const comment = await Comment.create(req.body);
+         res.status(200).json(comment);
        }catch(err) {
        res.status(400).json(err);
        }});
@@ -22,17 +26,17 @@ router.get("/all", (req, res) => {
 
       
 
-      //delete post by title
-      router.delete('/:title', async (req, res) => {
+      //delete comment by id
+      router.delete('/:id', async (req, res) => {
         try {
-          const post = await Post.destroy(
+          const comment = await Comment.destroy(
             {
               where: {
-                title: req.params.title
+                id: req.params.id
               }
             }
           )
-          res.status(200).json(post);
+          res.status(200).json(comment);
       
         } catch(err) {
           console.log(err);
@@ -41,13 +45,12 @@ router.get("/all", (req, res) => {
       });
 
 
-      //update post by id
+      //update comment by id
       router.put('/:id', async (req, res) => {
         try {
-          const post = await Post.update(
+          const comment = await Comment.update(
             {
-              title: req.body.title,
-              text: req.body.text
+              body: req.body.body
             },
             {
               where: {
@@ -56,7 +59,7 @@ router.get("/all", (req, res) => {
             }
           )
       
-          res.status(200).json(post);
+          res.status(200).json(comment);
       
       
         } catch(err) {

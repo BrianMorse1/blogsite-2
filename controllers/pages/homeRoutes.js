@@ -16,5 +16,17 @@ router.get('/', async (req, res) => {
     })
 });
 
+router.get("/post/:id", async (req, res) => {
+
+    const postData = await Post.findByPk(req.params.id);
+
+    const post = postData.get({plain: true})
+
+    res.render("singlepost", {
+        post: post
+    })
+
+})
+
 
 module.exports = router;
