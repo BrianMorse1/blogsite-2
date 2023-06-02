@@ -16,6 +16,8 @@ router.get('/', async (req, res) => {
     })
 });
 
+
+//renders singlepost handlebars when provided post id
 router.get("/post/:id", async (req, res) => {
 
     const postData = await Post.findByPk(req.params.id);
