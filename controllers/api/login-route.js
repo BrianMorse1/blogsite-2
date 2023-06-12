@@ -5,15 +5,14 @@ const { User } = require("../../models");
 router.post('/login', async (req, res) => {
     try {
         const userData = await User.findOne({
-            where: {
-                //CHECK THIS FIRST IF IT DOESN'T WORK
-                name: req.body.name,
-            },
+          where: {
+            name: req.body.name,
+          },
         });
         if (!userData) {
-            res.status(400).json({ message: 'Incorrect username or password, please try again' });
-            return;   
-    }
+          res.status(400).json({ message: 'Incorrect username or password, please try again' });
+          return;
+        }
 
 const validPassword = await userData.checkPassword(req.body.password);
 if (!validPassword) {
@@ -30,3 +29,5 @@ if (!validPassword) {
         res.status(500).json(err);
     }
 });
+
+module.exports = router;
