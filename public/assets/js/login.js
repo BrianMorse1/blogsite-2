@@ -8,7 +8,7 @@ if (email && password) {
     //check the fetch route if there are any problems
     const response = await fetch('/api/users/login', {
     method: 'POST', 
-    body: JSON.stringify({ email, password }),
+    body: JSON.stringify({ email, password, username }),
     headers: { 'Content-Type': 'application/json' },
 });
 
