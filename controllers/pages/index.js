@@ -6,7 +6,7 @@ const newUserRoute = require('./newUserRoute');
 
 router.use('/', homeRoutes);
 router.use('/login', loginRoute);
-router.use('/newUser', loginRoute);
+router.use('/newUser', newUserRoute);
 // router.use('/profile', profileRoutes);
 
 
