@@ -9,7 +9,8 @@
     "watch": "nodemon server.js",
     "seed": "node seeds/index.js",
     "seed1": "node userData.js",
-    "seed2": "node postData.js"
+    "seed2": "node postData.js",
+    "devstart": "nodemon server.js"
   },
   "repository": {
     "type": "git",
