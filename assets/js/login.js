@@ -1,24 +1,35 @@
 const loginFormHander = async (event) => {
 event.preventDefault();
-const email = document.querySelector('#login-username').value.trim();
-const password = document.querySelector('#login-password').value.trim();
+const logEmail = document.querySelector('#login-email').value;
+const logPassword = document.querySelector('#login-password').value;
+let data;
 
-if (email && password) {
-
-    //check the fetch route if there are any problems
-    const response = await fetch('/api/users/login', {
-    method: 'POST', 
-    body: JSON.stringify({ email, password, username }),
-    headers: { 'Content-Type': 'application/json' },
+if (logEmail && logPassword) {
+    data = {
+        email: logEmail,
+        password: logPassword
+    };
+   try {
+    const log = await fetch('./api/login-route', {
+    method: 'Post',
+    headers: {
+        'Content-Type': 'application/json'
+   },
+    body: JSON.stringify(data)
 });
+    if (log.ok){
+    alert('Logged in!');
+    document.location.replace('/');
+ }else{
+     alert('Invalid Credentials');
+ }} catch (error){
+    console.log(error);
+ }} else {
+    alert('Please fill out all fields');
+ }};
 
-if(response.ok) {
-    //code for succesful login
-    window.location.replace('/layouts/main');
-    } else {
-    //failed login code
-    alert('Incorrect username/password. Please try again or create a profile');
-}}else{
-    alert('Please enter both a username and password');
-}};
+const login = document.querySelector('#loginSubmit');
 
+login.addEventListener('click', function(event) {
+    loginFormHander(event);
+});

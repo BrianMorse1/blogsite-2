@@ -18,9 +18,8 @@ const data = {
         body: JSON.stringify(data)
     })
     .then(response => response.json())
-    .then(data => {
-        console.log('User created:', data);
-    })
+    .then(alert('User successfully created! Please navigate to the login page and log in')
+    )
     .catch(error => {
         console.log('Error:', error);
     });
