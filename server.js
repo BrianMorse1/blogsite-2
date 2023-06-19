@@ -30,6 +30,14 @@ const sess = {
 };
 
 app.use(session(sess));
+// function to check that session  is authenticated before allowing user to use parts of app
+const isAuthenticated = (req, res, next) => {
+  if(req.session.loggedIn = true){
+    next();
+    } else {
+      res.redirect('./login');
+  }
+};
 
 // Inform Express.js which template engine to use
 app.engine('handlebars', hbs.engine);
