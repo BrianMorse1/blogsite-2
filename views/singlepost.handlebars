@@ -4,13 +4,23 @@
         <h1>{{post.title}}</h1>
         <p>{{post.text}}</p>
     </div>
+    <div>
+        <ul>
+        {{#each comments as |comment|}}
+            <li>
+                 <p>{{comment.body}}</p>
+            </li>
 
-
+        {{/each}}
+    </ul>
+    </div>
+{{#if loggedin}}
     <form id="add-comment-form">
         <label>Comment Body</label>
         <textarea id="comment-body"></textarea>
         <button type="submit">Submit</button>
     </form>
+    {{/if}}
 </div>
 
-<script src="/assets/js/comment.js"></script>
+<script src="/js/comment.js"></script>

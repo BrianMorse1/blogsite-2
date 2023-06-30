@@ -2,7 +2,9 @@
     <h2>Homepage</h2>
 
     <ul>
+        {{#if loggedin}}
         {{#each posts as |post|}}
+
         <a href="/post/{{post.id}}">
             <li>
                 <div>
@@ -12,6 +14,18 @@
             </li>
          </a>
         {{/each}}
+        {{else}}
+        {{#each posts as |post|}}
+        <a href="/login">
+            <li>
+                <div>
+                    <h2>{{post.title}}</h2>
+                    <p>{{post.text}}</p>
+                </div>
+            </li>
+         </a>
+        {{/each}}
+        {{/if}}
     </ul>
     
 </div>

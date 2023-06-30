@@ -10,8 +10,8 @@ if (logEmail && logPassword) {
         password: logPassword
     };
    try {
-    const log = await fetch('http://localhost:3001/api/login', {
-    method: 'Post',
+    const log = await fetch('/api/login', {
+    method: 'POST',
     headers: {
         'Content-Type': 'application/json'
    },

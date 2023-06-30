@@ -9,7 +9,10 @@ document.querySelector("#add-comment-form").addEventListener("submit", (event) =
         body: JSON.stringify({
             body, 
             post_id
-        })
+        }),
+        headers: {
+            "Content-Type": "application/json"
+        }
     })
     .then(() => {
         

@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     res.render('homepage', {
         // layout: "main",
         posts: posts,
-        loggedin: true
+        loggedin: req.session.loggedin
     })
 });
 
@@ -18,12 +18,16 @@ router.get('/', async (req, res) => {
 //renders singlepost handlebars when provided post id
 router.get("/post/:id", async (req, res) => {
 
-    const postData = await Post.findByPk(req.params.id);
+    const postData = await Post.findByPk(req.params.id, {
+        include: [Comment]
+    });
 
     const post = postData.get({plain: true})
-
+    console.log(post);
     res.render("singlepost", {
-        post: post
+        post: post,
+        loggedin: req.session.loggedin,
+        comments: post.comments
     })
 
 })
