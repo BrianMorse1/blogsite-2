@@ -1,8 +1,141 @@
-h3, 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; 
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #345995;
+  }
+  
+  h1 {
+    font-size: 32px;
+    color: #345995;
+  }
+  
+  h2 {
+    font-size: 24px;
+    color: #428f72;
+  }
+  
+  h3 {
+    font-size: 20px;
+    color: #ffbf69;
+  }
+  
+  p {
+    color: #888;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+ 
+  
+  #main-header {
+    background-color: #345995; 
+    padding: 10px;
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    align-items: center; 
+    justify-content: flex-end; 
+    height: 40px
+  }
 
-h1, 
+  #tagline {
+        position: fixed;
+        top: 0;
+        left: 0;
+        color: #fff;
+  }
+      
 
-p,
-
-
-
+  
+  .navLink {
+    margin-right: 10px;
+    color: #fff;
+  }
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  input[type="submit"],
+  button {
+    background-color: #428f72;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .card h1 {
+    color: #345995;
+    margin-top: 0;
+  }
+  
+  .card p {
+    color: #888;
+  }
+  
+  #login-form label,
+  #new-user-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  #new-user-form #new-username {
+    width: 50%;
+  }
+  
+  #post-id {
+    font-weight: bold;
+    color: #ffbf69;
+  }
+  
+  #add-comment-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  #comment-body {
+    width: 100%;
+    height: 100px;
+  }
+  

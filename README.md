@@ -38,5 +38,12 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
 
 
 Colors: 
-background: #bee7e1
-major text: #BB3f2f
+background: 
+major text: 
+
+
+
+dark blue: #19424E
+light blue: #2f7b8D
+dark green: #215d3a
+lightest blue: #aee7f0
