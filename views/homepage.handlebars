@@ -1,7 +1,7 @@
 <div>
     <h2>Homepage</h2>
     {{#unless loggedin}}
-    <p> Please log in to view and create posts!</p>
+    <p> Please log in to create posts!</p>
     {{/unless}}
 
     <ul>
@@ -31,5 +31,15 @@
         {{/if}}
     </ul>
     
+        <form id="new-post">
+        {{#if loggedin}}
+     <label>Create a new blog post:</label>
+    <input id="postTitle" type="text" name="title" placeholder="Title" required>
+    <textarea id="postBody" name="text" placeholder="Enter your blog post here" required></textarea>
+    <input id="postSubmit" type="submit" value="Submit">
+    </form>
+    {{/if}}
+
+
 </div>
 

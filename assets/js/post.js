@@ -17,10 +17,12 @@ const postFormHandler = (event) => {
         body: JSON.stringify(data)
     })
     .then(response => response.json())
-    .then(alert('User successfully created! Please navigate to the login page and log in')
-    )
+    .then(data => {
+        console.log(data);
+    })
     .catch(error => {
         console.log('Error:', error);
+
     });
 };
 
