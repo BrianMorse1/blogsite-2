@@ -1,5 +1,8 @@
 <div>
     <h2>Homepage</h2>
+    {{#if !loggedin}}
+    <p> Please log in to view and create posts!</p>
+    {{/if}}
 
     <ul>
         {{#if loggedin}}
